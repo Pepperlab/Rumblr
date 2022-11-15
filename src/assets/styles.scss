@@ -1,3 +1,13 @@
 body {
     background-color: green;
 }
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container > button {
+    display: flex;
+    justify-content: center;
+}
