@@ -1,20 +1,17 @@
 import React, { createContext, useState } from 'react';
 import { useNavContext } from '../contexts/NavContext'; 
 
-export default function EqDiv () {
-    const magnitude = 6;
-    const location = "my ass"
-    const date = "TODAY"
+export default function EqDiv (props) {
     return(
         <div>
             <div>
-                Magnitude: {magnitude}
+                Magnitude: {props?.data?.magnitude}
             </div>
             <div>
-                Location: {location}
+                Longitude: {props?.data?.longitude} Latitude: {props?.data?.latitude}
             </div>
             <div>
-                Date: {date}
+                Date: {props?.data?.time}
             </div>
         </div>
    

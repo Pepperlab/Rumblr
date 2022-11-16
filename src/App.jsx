@@ -14,8 +14,8 @@ export default function App() {
     return (
         <div>
         <NavContextProvider>
-                <Navbar/>
-                <MainContainer/>
+                <Navbar/>   
+                    <MainContainer/>
         </NavContextProvider>
         </div>
     );
