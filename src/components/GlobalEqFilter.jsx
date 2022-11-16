@@ -1,15 +1,15 @@
 import React, { createContext, useState } from 'react';
 import { useGlobalContext } from '../contexts/GlobalContext';
+
 export default function GlobalEqFilter () {
-    const setGlobalState = useGlobalContext().setGlobalState
-    const changeFreq = (freq) => {
-        
-    }
+    const fetchFrequency = useGlobalContext().fetchFrequency
+    
     return(
         <div>
-            <button onClick={() => changeFreq('daily')}>Daily</button>
-            <button onClick={() => changeFreq('weekly')}>Weekly</button>
-            <button onClick={() => changeFreq('monthly')}>Monthly</button>
+            <button onClick={() => fetchFrequency('daily')}>Daily</button>
+            <button onClick={() => fetchFrequency('weekly')}>Weekly</button>
+            <button onClick={() => fetchFrequency('monthly')}>Monthly</button>
+            <button onClick={() => fetchFrequency('yearly')}>Yearly</button>
         </div>
     )
 }
