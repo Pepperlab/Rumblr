@@ -1,5 +1,6 @@
 body {
-    background-color: green;
+    // background-color: #1e293b;
+    background-image: linear-gradient(to bottom, rgb(68, 255, 68), rgb(99, 223, 223), rgb(230, 70, 230));
 }
 
 .nav-container {
@@ -14,4 +15,11 @@ body {
 
 .search-container {
     border: 2px solid black;
+}
+
+.test {
+    background-color: cadetblue;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <div className="nav-container">
-      <Box sx={{ width: 500 }}>
+      <Box sx={{ width: 500} }>
       <BottomNavigation
         showLabels
         value={value}
