@@ -43,10 +43,14 @@ export default function SearchInput() {
     }
 
     // console.log("this is the searchInfo: ", searchInfo);
-    console.log("this is the start value: ", startValue.$d)
-    console.log("this is the type: ", typeof startValue.$d)
-    console.log("this is the date in string form?: ", startValue.$d.toString())
-    console.log("is this a string?: ", typeof startValue.$d.toString())
+    // console.log("this is the start value: ", startValue.$d)
+    // console.log("this is the type: ", typeof startValue.$d)
+    // console.log("this is the date in string form?: ", startValue.$d.toString())
+    // console.log("is this a string?: ", typeof startValue.$d.toString())
+
+    // let objectDate = startValue.$d;
+    // let day = objectDate.getDate()
+    // console.log()
 
     // getData(searchInfo);
   }
