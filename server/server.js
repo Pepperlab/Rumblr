@@ -13,8 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, '../dist')));
 
 app.get('/', (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../dist/index.html'))
-})
+    return res.status(200).sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+app.get('/test', async (req, res) => {
+    return res.statusCode(200).json({ message: 'pass!' })
+});
 
 app.use('/api/global', globalRouter);
 app.use('/api/search', searchRouter);
@@ -38,3 +42,5 @@ app.use((err, req, res, next) => {
 
 
 app.listen(PORT, () => console.log(`Inside port ${PORT}`));
+
+module.exports = { app };
