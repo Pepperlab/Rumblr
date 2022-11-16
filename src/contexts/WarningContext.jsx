@@ -14,7 +14,7 @@ export function WarningContextProvider({ children }) {
     const newState = [];
 
     for (let i = 0; i < 10; i++) {
-      newState.push('This is a warning with id:' + Math.random() * 100)
+      newState.push('This is a warning with id: ' + Math.floor(Math.random() * 10000))
     }
 
     setWarningState(newState)

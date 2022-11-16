@@ -8,7 +8,7 @@ export default function EqDiv (props) {
                 Magnitude: {props?.data?.magnitude}
             </div>
             <div>
-                Longitude: {props?.data?.longitude} Latitude: {props?.data?.latitude}
+                Longitude/Latitude: {props?.data?.longitude}/{props?.data?.latitude}
             </div>
             <div>
                 Date: {props?.data?.time}
