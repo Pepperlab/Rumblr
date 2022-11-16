@@ -42,14 +42,37 @@ const responseFormat = (response) => {
 
 module.exports = {
     getSearch: async (req, res, next) => {
+        let startDay, endDay, upperLimit, lowerLimit;
+        const today = new Date();
+        const lastWeek = new Date(today.getTime() - 604800000);
         const { longitude, latitude } = req.body.location;
         const radius = req.body.location.radius ? req.body.location.radius : 20000;
-        const startDay = req.body.time ? req.body.time.startDay : undefined;
-        const endDay = req.body.time ? req.body.time.endDay : undefined;
-        const upperLimit = req.body.magnitude ? req.body.magnitude.upperLimit : null;
-        const lowerLimit = req.body.magnitude ? req.body.magnitude.lowerLimit : 1;
 
-        const query = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${startDay}&endtime=${endDay}&minmagnitude=${lowerLimit}&maxmagnitude=${upperLimit}&latitude=${latitude}&longitude=${longitude}&maxradiuskm=${radius}`;
+        // set min and max magnitude to 1 and 10 if not provided
+        if (req.body.magnitude) {
+            upperLimit = req.body.magnitude.upperLimit ? req.body.magnitude.upperLimit : 10;
+            lowerLimit = req.body.magnitude.lowerLimit ? req.body.magnitude.lowerLimit : 1;
+        }
+        if (!upperLimit || !lowerLimit) {
+            upperLimit = 10;
+            lowerLimit = 1;
+        }
+
+        let query = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minmagnitude=${lowerLimit}&maxmagnitude=${upperLimit}&latitude=${latitude}&longitude=${longitude}&maxradiuskm=${radius}`;
+
+        // add start and end time if not provided
+        if (req.body.time) {
+            if (req.body.time.startDay && req.body.time.endDay) {
+                startDay = req.body.time.startDay;
+                endDay = req.body.time.endDay;
+            }
+        }
+        if (!startDay || !endDay) {
+            endDay = getDate(today);
+            startDay = getDate(lastWeek);
+        }
+        query += `&starttime=${startDay}&endtime=${endDay}`;
+
 
         axios.get(query)
             .then(response => {
