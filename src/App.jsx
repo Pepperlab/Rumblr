@@ -15,7 +15,7 @@ export default function App() {
         <div>
         <NavContextProvider>
                 <Navbar/>   
-                    <MainContainer/>
+                <MainContainer/>
         </NavContextProvider>
         </div>
     );

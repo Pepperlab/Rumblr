@@ -27,17 +27,18 @@ export default function Navbar() {
 
   return (
     <div className="nav-container">
-      <Box sx={{ width: 500 }}>
-      <BottomNavigation
+      <Box sx={{ width: "100%"}}>
+      <BottomNavigation id="navbar"
+        sx={{ display: "flex", justifyContent: "space-around"}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Global List" icon={<PublicIcon />} onClick={() => changePage('global')}/>
-        <BottomNavigationAction label="Current Warnings" icon={<WarningAmberIcon />} onClick={() => changePage('warning')}/>
-        <BottomNavigationAction label="Search" icon={<TravelExploreIcon />} onClick={() => changePage('search')}/>
+        <BottomNavigationAction className="nav-action" id="global-nav" label="Global List" icon={<PublicIcon />} onClick={() => changePage('global')}/>
+        <BottomNavigationAction className="nav-action" id="warning-nav" label="Current Warnings" icon={<WarningAmberIcon />} onClick={() => changePage('warning')}/>
+        <BottomNavigationAction className="nav-action" id="search-nav" label="Search" icon={<TravelExploreIcon />} onClick={() => changePage('search')}/>
       </BottomNavigation>
     </Box>
   </div>

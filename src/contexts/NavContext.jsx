@@ -7,7 +7,7 @@ export function useNavContext() {
 }
 
 export function NavContextProvider({ children }) {
-  const [navState, setNavState] = useState('search')
+  const [navState, setNavState] = useState('global')
   
 
   return (
