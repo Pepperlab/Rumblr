@@ -1,25 +1,116 @@
 body {
     // background-color: #1e293b;
-    background-image: linear-gradient(to bottom, rgb(68, 255, 68), rgb(99, 223, 223), rgb(230, 70, 230));
+    background-image: linear-gradient(to bottom, rgb(189, 83, 227), rgb(113, 118, 216), rgb(24, 131, 122));
+    background-attachment: fixed;
 }
 
 .nav-container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 5%;
+    padding: 0px;
 }
 
-.nav-container > button {
-    display: flex;
-    justify-content: center;
-}
 
 .search-container {
     border: 2px solid black;
 }
 
 .test {
-    background-color: cadetblue;
-    margin-top: 5px;
-    margin-bottom: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid;
+    border-color: rgb(114, 187, 4);
+}
+
+.MuiListItem-root:has(.mag1) {
+    background-color: rgb(158, 189, 0);
+}
+
+.MuiListItem-root:has(.mag2) {
+    background-color: rgb(189, 154, 0);
+}
+
+.MuiListItem-root:has(.mag3) {
+    background-color: rgb(189, 113, 0);
+}
+
+.MuiListItem-root:has(.mag4) {
+    background-color: rgb(189, 60, 0);
+}
+
+.MuiListItem-root:has(.mag5) {
+    background-color: rgb(189, 22, 0)
+}
+
+.MuiListItem-root:has(.mag6) {
+    background-color: rgb(189, 0, 0)
+}
+
+.MuiListItem-root:has(.mag7) {
+    background-color: purple;
+}
+
+.MuiListItem-root:has(.mag8) {
+    background-color: purple;
+}
+
+.MuiListItem-root:has(.mag9) {
+    background-color: purple;
+}
+
+.MuiListItem-root:has(.mag10) {
+    background-color: purple;
+}
+
+.eq-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#global-nav.Mui-selected {
+    color: blue;
+}
+
+#warning-nav.Mui-selected {
+    color: red;
+}
+
+#search-nav.Mui-selected {
+    color: green;
+}
+
+#navbar {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    background-color: rgb(144, 223, 223, .5);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    // border: solid;
+    // border-width: 2px;
+    align-items: center;
+}
+
+#global-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#refresh-button {
+    margin-bottom: 10px;
+}
+
+#MuiButtonBase-root {
+    border: solid;
+    border-radius: 2px;
 }

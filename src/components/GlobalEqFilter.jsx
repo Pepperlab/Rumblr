@@ -1,15 +1,16 @@
 import React, { createContext, useState } from 'react';
 import { useGlobalContext } from '../contexts/GlobalContext';
+import Button from '@mui/material/Button';
 
 export default function GlobalEqFilter () {
     const fetchFrequency = useGlobalContext().fetchFrequency
     
     return(
-        <div>
-            <button onClick={() => fetchFrequency('daily')}>Daily</button>
-            <button onClick={() => fetchFrequency('weekly')}>Weekly</button>
-            <button onClick={() => fetchFrequency('monthly')}>Monthly</button>
-            <button onClick={() => fetchFrequency('yearly')}>Yearly</button>
+        <div id="global-buttons-container">
+            <Button variant="contained" onClick={() => fetchFrequency('daily')}>Daily</Button>
+            <Button variant="contained" onClick={() => fetchFrequency('weekly')}>Weekly</Button>
+            <Button variant="contained" onClick={() => fetchFrequency('monthly')}>Monthly</Button>
+            <Button variant="contained" onClick={() => fetchFrequency('yearly')}>Yearly</Button>
         </div>
     )
 }

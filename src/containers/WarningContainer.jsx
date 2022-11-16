@@ -51,9 +51,15 @@ export default function WarningContainer() {
     );
   }
 
+  const buttonStyle = {
+    borderRadius: 35,
+    backgroundColor: "lightgreen",
+    color: "black"
+  }
+
   return (
-    <div>
-      <Button variant='contained' onClick={updateWarnings}>refresh warnings</Button>
+    <div className="list-container">
+      <Button style={buttonStyle} id="refresh-button"variant='contained' onClick={updateWarnings}>refresh warnings</Button>
       <Box
         sx={{ width: '100%', height: 400, maxWidth: 360, bgcolor: 'background.paper' }}
       >
