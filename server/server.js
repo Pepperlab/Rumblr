@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const globalRouter = require('./router/globalRouter');
 const searchRouter = require('./router/searchRouter');
-
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -19,9 +19,13 @@ app.get('/', (req, res) => {
 app.get('/test', async (req, res) => {
     return res.statusCode(200).json({ message: 'pass!' })
 });
-
+app.use(cors());
 app.use('/api/global', globalRouter);
 app.use('/api/search', searchRouter);
+
+app.get('/test', async (req, res) => {
+    return res.statusCode(200).json({ message: 'pass!' })
+});
 
 // handle unknwon routes
 app.use((req, res) => {

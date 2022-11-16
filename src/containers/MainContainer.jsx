@@ -3,6 +3,9 @@ import GlobalContainer from './GlobalContainer';
 import SearchContainer from './SearchContainer';
 import WarningContainer from './WarningContainer';
 import { useNavContext } from '../contexts/NavContext.jsx';
+import { WarningContextProvider } from '../contexts/WarningContext';
+import { GlobalContextProvider } from '../contexts/GlobalContext';
+import { SearchContextProvider } from '../contexts/SearchContext';
 
 export default function MainContainer () {
   const navState = useNavContext().navState
@@ -17,7 +20,13 @@ export default function MainContainer () {
   
   return (
     <div>
-      {mainPage}
+      <WarningContextProvider>
+        <GlobalContextProvider>
+          <SearchContextProvider>
+            {mainPage}
+          </SearchContextProvider>
+        </GlobalContextProvider>
+      </WarningContextProvider>
     </div>
   )
 }
