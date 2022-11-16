@@ -20,6 +20,16 @@ export default function SearchInput() {
   // state for handling endDate
   const [endValue, setEndValue] = React.useState(dayjs('2022-04-07'));
 
+  // function for converting date
+  const formatDate = (date) => {
+    let objectDate = date;
+
+    let day = objectDate.getDate()
+    let month = objectDate.getMonth() + 1
+    let year = objectDate.getFullYear()
+
+    return `${year}-${month}-${day}`
+  }
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -27,32 +37,25 @@ export default function SearchInput() {
     const longitude = document.getElementById('longitude-input').value
     const latitude = document.getElementById('latitude-input').value
     const radius = document.getElementById('radius-input').value
-    // const startDay = document.getElementById('startDate-input').value
-    // const endDay = document.getElementById('endDate-input').value
     const lowerLimit = document.getElementById('lowerLimit-input').value
     const upperLimit = document.getElementById('upperLimit-input').value
+
+    let startDate = formatDate(startValue.$d)
+    let endDate = formatDate(endValue.$d)
 
     const searchInfo = {
       longitude: longitude,
       latitude: latitude,
       radius: radius,
-      // startDay: startValue,
-      // endDay: endValue,
+      startDay: startDate,
+      endDay: endDate,
       lowerLimit: lowerLimit,
       upperLimit: upperLimit
     }
+    
+    console.log("this is the search info object", searchInfo);
 
-    // console.log("this is the searchInfo: ", searchInfo);
-    // console.log("this is the start value: ", startValue.$d)
-    // console.log("this is the type: ", typeof startValue.$d)
-    // console.log("this is the date in string form?: ", startValue.$d.toString())
-    // console.log("is this a string?: ", typeof startValue.$d.toString())
-
-    // let objectDate = startValue.$d;
-    // let day = objectDate.getDate()
-    // console.log()
-
-    // getData(searchInfo);
+    getData(searchInfo);
   }
 
 

@@ -11,7 +11,8 @@ export function SearchContextProvider({ children }) {
   const [searchState, setSearchState] = useState([]);
 
   const getData = (data) => {
-    fetch('/api/search/', {
+    console.log('inside getData!')
+    fetch('http://localhost:3000/api/search/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,7 +24,8 @@ export function SearchContextProvider({ children }) {
           radius: data.radius
         },
         time: {
-          range: data.range
+          startDay: data.startDay,
+          endDay: data.endDay
         },
         magnitude: {
           lowerLimit: data.lowerLimit,
@@ -36,6 +38,7 @@ export function SearchContextProvider({ children }) {
       console.log(data)
       setSearchState(data)
     })
+    console.log("This is the searchState from backend: ",searchState)
   }
 
   return (
