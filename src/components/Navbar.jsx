@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <div className="nav-container">
-      <Box sx={{ width: "100%"}}>
+      <Box sx={{ width: "100%", opacity: "1"}}>
       <BottomNavigation id="navbar"
         sx={{ display: "flex", justifyContent: "space-around"}}
         showLabels

@@ -60,9 +60,11 @@ export default function WarningContainer() {
   return (
     <div className="list-container">
       <Button style={buttonStyle} id="refresh-button"variant='contained' onClick={updateWarnings}>refresh warnings</Button>
+        
       <Box
         sx={{ width: '100%', height: 400, maxWidth: 360, bgcolor: 'background.paper' }}
       >
+       
         <FixedSizeList
           height={400}
           width={360}

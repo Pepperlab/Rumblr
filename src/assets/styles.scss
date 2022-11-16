@@ -1,6 +1,7 @@
 body {
     // background-color: #1e293b;
-    background-image: linear-gradient(to bottom, rgb(189, 83, 227), rgb(113, 118, 216), rgb(24, 131, 122));
+    background-image: url('https://www.amnh.org/var/ezflow_site/storage/images/media/amnh/images/explore/ology-images/earth/plates-on-the-move/still-slip/4753698-1-eng-US/still-slip.jpg');
+    // background-image: linear-gradient(to bottom, rgb(189, 83, 227), rgb(113, 118, 216), rgb(24, 131, 122));
     background-attachment: fixed;
 }
 
@@ -12,6 +13,9 @@ body {
     padding: 0px;
 }
 
+.MuiBottomNavigation-root {
+    opacity: 1;
+}
 
 .search-container {
     border: 2px solid black;
@@ -26,50 +30,61 @@ body {
     border-color: rgb(114, 187, 4);
 }
 
-.MuiListItem-root:has(.mag1) {
-    background-color: rgb(158, 189, 0);
-}
+// .list-box {
+//     background-color: rgba(255, 255, 255, 0)
+// }
 
-.MuiListItem-root:has(.mag2) {
-    background-color: rgb(189, 154, 0);
-}
-
-.MuiListItem-root:has(.mag3) {
-    background-color: rgb(189, 113, 0);
-}
-
-.MuiListItem-root:has(.mag4) {
-    background-color: rgb(189, 60, 0);
-}
-
-.MuiListItem-root:has(.mag5) {
-    background-color: rgb(189, 22, 0)
-}
-
-.MuiListItem-root:has(.mag6) {
-    background-color: rgb(189, 0, 0)
-}
-
-.MuiListItem-root:has(.mag7) {
-    background-color: purple;
-}
-
-.MuiListItem-root:has(.mag8) {
-    background-color: purple;
-}
-
-.MuiListItem-root:has(.mag9) {
-    background-color: purple;
-}
-
-.MuiListItem-root:has(.mag10) {
-    background-color: purple;
+.MuiListItem-root {
+    color: rgb(0, 0, 0, 1);
 }
 
 .eq-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
+
+.MuiListItem-root:has(.mag1) {
+    background-color: rgba(50, 189, 0, 0.7);
+}
+
+.MuiListItem-root:has(.mag2) {
+    background-color: rgba(107, 189, 0, 0.7);
+}
+
+.MuiListItem-root:has(.mag3) {
+    background-color: rgba(180, 189, 0, 0.7);
+}
+
+.MuiListItem-root:has(.mag4) {
+    background-color: rgba(237, 213, 0, 0.7);
+}
+
+.MuiListItem-root:has(.mag5) {
+    background-color: rgba(226, 102, 1, 0.7)
+}
+
+.MuiListItem-root:has(.mag6) {
+    background-color: rgba(189, 13, 0, 0.7)
+}
+
+.MuiListItem-root:has(.mag7) {
+    background-color: rgba(189, 0, 0, 0.7);
+}
+
+.MuiListItem-root:has(.mag8) {
+    background-color: rgba(231, 1, 1, 0.7);
+}
+
+.MuiListItem-root:has(.mag9) {
+    background-color: rgb(255, 9, 9);
+}
+
+.MuiListItem-root:has(.mag10) {
+    background-color: rgb(255, 1, 1);
 }
 
 #global-nav.Mui-selected {
@@ -88,7 +103,8 @@ body {
     display: flex;
     align-items: stretch;
     align-content: stretch;
-    background-color: rgb(144, 223, 223, .5);
+    background-color: rgba(153, 153, 153, 0.75);
+    border-radius: 50px;
 }
 
 .list-container {

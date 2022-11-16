@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import { useNavContext } from '../contexts/NavContext'; 
 
 export default function EqDiv (props) {
     return(
