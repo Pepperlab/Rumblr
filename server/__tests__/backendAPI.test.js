@@ -194,6 +194,28 @@ describe('Search API test', () => {
                 expect(typeof earthquake.time).toEqual('string');
             })
     })
+    
+    test('search with the same date as start and end will not throw an error', () => {
+        return request(server)
+            .post('/api/search')
+            .expect('Content-Type', /application\/json/)
+            .send({
+                "location": {
+                    "longitude": -155.483337402344,
+                    "latitude": 19.191499710083,
+                    "radius": 5000
+                },
+                "time": {
+                    "startDay": "2022-11-15",
+                    "endDay": "2022-11-15"
+                },
+                "magnitude": {
+                    "lowerLimit": 1,
+                    "upperLimit": 5
+                }
+            })
+            .expect(500)
+    })
 
     test('search based on location without radius & longitude should throw error', () => {
         return request(server)
@@ -218,6 +240,7 @@ describe('Search API test', () => {
             })
             .expect(500)
     })
+
 })
 
 

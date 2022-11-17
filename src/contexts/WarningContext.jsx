@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import warningArr from '../assets/warnings';
 
 const WarningContext = React.createContext();
 
@@ -11,12 +12,7 @@ export function WarningContextProvider({ children }) {
   
   function updateWarnings () {
     //this is where a fetch request will go go 
-    const newState = [];
-
-    for (let i = 0; i < 10; i++) {
-      newState.push('This is a warning with id: ' + Math.floor(Math.random() * 10000))
-    }
-
+    const newState = [...warningArr];
     setWarningState(newState)
   }
 

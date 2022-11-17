@@ -9,7 +9,7 @@ export default function GlobalContainer() {
   return (
     <div className="list-container">
     <GlobalEqFilter/>
-    {globalState.length ? <EqList eqArr={ globalState }></EqList>: "Please select earthquake frequency"}
+    {globalState.length ? <EqList eqArr={ globalState }></EqList>: <div><h1 className="select-freq">Please select earthquake frequency</h1></div>}
     </div>
   );
 }

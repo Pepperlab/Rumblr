@@ -20,7 +20,6 @@ export default function EqList(props) {
     )
   }
 
-
   return (
     <Box className ="list-box"
       sx={{ width: '100%', height: "90%", fontFamily: "Ariel",

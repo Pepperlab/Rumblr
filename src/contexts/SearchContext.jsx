@@ -6,18 +6,21 @@ export function useSearchContext() {
   return useContext(SearchContext)
 }
 
+
 export function SearchContextProvider({ children }) {
 
   const [searchState, setSearchState] = useState([]);
 
   const getData = (data) => {
-    console.log('inside getData!')
+
     fetch('http://localhost:3000/api/search/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:3000/*',
+        'mode': 'cors'
       },
-      body: {
+      body: JSON.stringify({
         location: {
           latitude: data.latitude,
           longitude: data.longitude,
@@ -31,15 +34,15 @@ export function SearchContextProvider({ children }) {
           lowerLimit: data.lowerLimit,
           upperLimit: data.upperLimit
         }
-      }
+      })
     })
-    .then((data) => { data.json() })
+    .then((data) => { return data.json() })
     .then((data) => { 
       console.log(data)
       setSearchState(data)
     })
-    console.log("This is the searchState from backend: ",searchState)
   }
+  console.log("This is the searchState data from the backend: ",searchState)
 
   return (
     <SearchContext.Provider value={{searchState, getData}}>

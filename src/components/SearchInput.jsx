@@ -52,12 +52,15 @@ export default function SearchInput() {
       lowerLimit: lowerLimit,
       upperLimit: upperLimit
     }
-    
-    console.log("this is the search info object", searchInfo);
 
     getData(searchInfo);
   }
 
+  const buttonStyle = {
+    borderRadius: 35,
+    backgroundColor: "lightgreen",
+    color: "black"
+  }
 
   return (
     <div className="search-container">
@@ -90,48 +93,25 @@ export default function SearchInput() {
           />
 
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            {/* <Stack spacing={3}> */}
-
-              <DesktopDatePicker
-                label="Start Date"
-                value={startValue}
-                minDate={dayjs('2017-01-01')}
-                onChange={(newValue) => {
-                  setStartValue(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-
-              <DesktopDatePicker
-                label="End Date"
-                value={endValue}
-                minDate={dayjs('2017-01-01')}
-                onChange={(newValue) => {
-                  setEndValue(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            {/* </Stack> */}
+            <DesktopDatePicker
+              label="Start Date"
+              value={startValue}
+              minDate={dayjs('2017-01-01')}
+              onChange={(newValue) => {
+                setStartValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+            <DesktopDatePicker
+              label="End Date"
+              value={endValue}
+              minDate={dayjs('2017-01-01')}
+              onChange={(newValue) => {
+                setEndValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
           </LocalizationProvider>
-
-          {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DesktopDatePicker
-            id="startDate-input" // i added this id
-            label="Start Date"
-            inputFormat="MM/DD/YYYY"
-            value={startValue}
-            onChange={handleStartChangeDate}
-            renderInput={(params) => <TextField {...params} />}
-          />
-          <DesktopDatePicker
-            id="endDate-input" // this one too
-            label="End Date"
-            inputFormat="MM/DD/YYYY"
-            value={endValue}
-            onChange={handleEndChangeDate}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider> */}
 
           <TextField
             id="lowerLimit-input"
@@ -146,31 +126,10 @@ export default function SearchInput() {
             autoComplete="current-upperLimit"
           />
         </Box>
-        <Button variant="contained" type="submit" value="submit">Submit</Button>
+        <div className="form-button">
+        <Button style={buttonStyle} variant="contained" type="submit" value="submit">Submit</Button>
+        </div>
       </form>
     </div>
   );
 }
-
-/*
-
-  <label>Longitude:</label>
-  <input type="text" id="longitude"></input>
-  <label>Latitude:</label>
-  <input type="text" id="latitude"></input>
-
-  <label>Radius:</label>
-  <input type="text" id="radius"></input>
-
-  <label>Start Date:</label>
-  <input type="text" id="startDay"></input>
-  <label>End Date:</label>
-  <input type="text" id="endDay"></input>
-
-  <label>Lower Limit</label>
-  <input type="text" id="lowerLimit"></input>
-  <label>Upper Limit:</label>
-  <input type="text" id="upperLimit"></input>
-
-  <button type="submit" value="submit">Search</button>
-  </form> */

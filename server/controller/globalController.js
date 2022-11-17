@@ -98,7 +98,7 @@ module.exports = {
     getYearly: async (req, res, next) => {
         const today = new Date();
         const lastYear = new Date(today.getTime() - 31556952000);
-        const query = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${getDate(lastYear)}&endtime=${getDate(today)}&minmagnitude=5`;
+        const query = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${getDate(lastYear)}&endtime=${getDate(today)}&minmagnitude=7`;
 
         axios.get(query)
             .then(response => {
