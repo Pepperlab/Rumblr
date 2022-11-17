@@ -6,6 +6,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import PublicIcon from '@mui/icons-material/Public';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import rumblr from '../assets/RumblrLogoMINI.png';
 
 export default function Navbar() {
   const setNavState = useNavContext().setNavState;
@@ -27,7 +28,8 @@ export default function Navbar() {
 
   return (
     <div className="nav-container">
-      <Box sx={{ width: "100%"}}>
+      <img className="logo" src={rumblr}/>
+      <Box sx={{ width: "100%", marginBottom: "5%"}}>
       <BottomNavigation id="navbar"
         sx={{ display: "flex", justifyContent: "space-around"}}
         showLabels

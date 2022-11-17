@@ -1,10 +1,8 @@
 import React, { createContext, useState } from 'react';
 import Navbar from "./components/Navbar";
-import GlobalContainer from './containers/GlobalContainer';
-import SearchContainer from './containers/SearchContainer';
-import WarningContainer from './containers/WarningContainer';
 import MainContainer from './containers/MainContainer';
 import { NavContextProvider } from './contexts/NavContext.jsx';
+import Links from './components/Links';
 
 
 export default function App() {
@@ -14,8 +12,9 @@ export default function App() {
     return (
         <div>
         <NavContextProvider>
-                <Navbar/>   
-                <MainContainer/>
+            <Navbar/>
+            <MainContainer/>
+            <Links/>
         </NavContextProvider>
         </div>
     );

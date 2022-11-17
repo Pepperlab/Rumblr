@@ -7,6 +7,7 @@ import { WarningContextProvider } from '../contexts/WarningContext';
 import { GlobalContextProvider } from '../contexts/GlobalContext';
 import { SearchContextProvider } from '../contexts/SearchContext';
 
+
 export default function MainContainer () {
   const navState = useNavContext().navState
   let mainPage = <div>There is no page container loaded</div>

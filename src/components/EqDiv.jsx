@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import { useNavContext } from '../contexts/NavContext'; 
 
 export default function EqDiv (props) {
     return(
@@ -14,7 +13,7 @@ export default function EqDiv (props) {
                 Place: {props?.data?.place}
             </div>
             <div>
-                Longitude/Latitude: {props?.data?.longitude}/{props?.data?.latitude}
+                Longitude/Latitude: {Math.floor(props?.data?.longitude * 100 ) / 100 }/{Math.floor(props?.data?.latitude * 100 ) / 100 }
             </div>
             
         </div>

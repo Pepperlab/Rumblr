@@ -7,7 +7,7 @@ const createErr = (errObj) => {
         message: `Error occured in ${errObj.middleware} middleware inside searchController. Error info: ${errObj.error}`
     });
 };
-
+console.log('inside searchController!')
 const getDate = (date, detail) => {
     const day = date.getDate();
     const month = date.getMonth() + 1;
@@ -47,7 +47,7 @@ module.exports = {
         const lastWeek = new Date(today.getTime() - 604800000);
         const { longitude, latitude } = req.body.location;
         const radius = req.body.location.radius ? req.body.location.radius : 20000;
-
+        console.log("inside getSearch!!!")
         // set min and max magnitude to 1 and 10 if not provided
         if (req.body.magnitude) {
             upperLimit = req.body.magnitude.upperLimit ? req.body.magnitude.upperLimit : 10;
@@ -67,7 +67,7 @@ module.exports = {
                 endDay = req.body.time.endDay;
             }
         }
-        if (!startDay || !endDay) {
+        if (!startDay || !endDay || startDay == endDay) {
             endDay = getDate(today);
             startDay = getDate(lastWeek);
         }
