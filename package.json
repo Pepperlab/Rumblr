@@ -2,8 +2,9 @@
   "name": "rumblr",
   "version": "1.0.0",
   "description": "earthquake tracking app",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "jest --detectOpenHandles",
     "server": "nodemon server/server.js",
     "frontend": "webpack-dev-server --open --hot",
